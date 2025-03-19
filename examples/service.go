@@ -18,10 +18,6 @@ func newService(addr string, interval time.Duration, instance string) (*Service,
 	return &Service{}, metrics.InitPush(pushURL, interval, extraLabels, true)
 }
 
-func randFloat(min, max float64) float64 {
-	return min + rand.Float64()*(max-min)
-}
-
 func (s *Service) run(ctx context.Context) error {
 	h := metrics.NewHistogram(`request_duration_seconds{path="/foo/bar"}`)
 
@@ -29,7 +25,7 @@ func (s *Service) run(ctx context.Context) error {
 	defer ticker.Stop()
 
 	for {
-		h.Update(randFloat(0, 10_100))
+		h.Update(rand.Float64() * 10_100) //nolint:gosec
 
 		select {
 		case <-ctx.Done():
