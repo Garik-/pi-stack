@@ -29,6 +29,8 @@ RUN bash -c 'ARCHIVE=victoria-metrics-linux-"${TARGETARCH}"-"${VICTORIA_METRICS_
 
 COPY run-victoria.sh .
 COPY grafana-datasources.yaml ./grafana/conf/provisioning/datasources/
+COPY grafana-dashboards.yaml ./grafana/conf/provisioning/dashboards/
+COPY grafana-dashboard-victoria-metrics.json .
 COPY logging.sh .
 COPY run-grafana.sh .
 COPY run-all.sh .

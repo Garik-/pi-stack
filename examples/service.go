@@ -11,9 +11,9 @@ import (
 type Service struct {
 }
 
-func newService(addr string, interval time.Duration, instance string) (*Service, error) {
+func newService(addr string, interval time.Duration) (*Service, error) {
 	pushURL := "http://" + addr + "/api/v1/import/prometheus"
-	extraLabels := `instance="` + instance + `"`
+	extraLabels := `instance="self",job="service"`
 
 	return &Service{}, metrics.InitPush(pushURL, interval, extraLabels, true)
 }

@@ -24,7 +24,7 @@ func run() (err error) {
 	defer stop()
 
 	log.Printf("start service with addr=%s interval=%s\n", defaultAddr, defaultPushInterval)
-	srv, err := newService(defaultAddr, defaultPushInterval, "pi-stack")
+	srv, err := newService(defaultAddr, defaultPushInterval)
 	if err != nil {
 		return
 	}
