@@ -13,7 +13,7 @@ docker run \
 	--rm \
 	-ti \
 	-v "$PWD"/container/grafana:/data/grafana \
-	-v "$PWD"/container/victoria:/data/victoria \
+	-v "$PWD"/container/victoria-metrics:/data/victoria-metrics \
 	-e GF_PATHS_DATA=/data/grafana \
 	--env-file .env \
 	garik/pi-stack:"${RELEASE}"

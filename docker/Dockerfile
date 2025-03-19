@@ -27,11 +27,12 @@ RUN bash -c 'ARCHIVE=victoria-metrics-linux-"${TARGETARCH}"-"${VICTORIA_METRICS_
     tar xfz "${ARCHIVE}" -C victoria-metrics/ && \
     rm "${ARCHIVE}"'
 
-
+COPY run-victoria.sh .
+COPY grafana-datasources.yaml ./grafana/conf/provisioning/datasources/
+COPY logging.sh .
+COPY run-grafana.sh .
 COPY run-all.sh .
 
 RUN find . -maxdepth 1 -type f | xargs dos2unix
-
-
 
 CMD ["/pi-stack/run-all.sh"]
