@@ -1,0 +1,3 @@
+FROM redhat/ubi9:9.5
+
+ENV GRAFANA_VERSION=v11.5.2
