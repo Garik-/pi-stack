@@ -9,4 +9,5 @@ run_with_logging "VictoriaMetrics ${VICTORIA_METRICS_VERSION}" "${ENABLE_LOGS_VI
 	-httpListenAddr=:8428 \
 	-search.latencyOffset=30s \
 	-memory.allowedPercent=50 \
-	-selfScrapeInterval=10s
+	-selfScrapeInterval=10s \
+	-storage.minFreeDiskSpaceBytes=256MB

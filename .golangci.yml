@@ -1,0 +1,24 @@
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters-settings:
+  cyclop:
+    max-complexity: 11
+
+  funlen:
+    lines: 80
+
+linters:
+  enable-all: true
+  disable:
+    - paralleltest
+    - tenv
+    - varnamelen
+    - mnd
+    - exhaustruct
+    - forbidigo
+    - depguard
+    - gofumpt
+    - gci
+    - godox
