@@ -2,7 +2,7 @@
 
 RELEASE=${1:-latest}
 
-# docker pull docker.io/grafana/otel-lgtm:"${RELEASE}"
+docker pull docker.io/garikdjan/pi-stack:"${RELEASE}"
 
 touch .env
 
@@ -16,4 +16,4 @@ docker run \
 	-v "$PWD"/container/victoria-metrics:/data/victoria-metrics \
 	-e GF_PATHS_DATA=/data/grafana \
 	--env-file .env \
-	garik/pi-stack:"${RELEASE}"
+	garikdjan/pi-stack:"${RELEASE}"
