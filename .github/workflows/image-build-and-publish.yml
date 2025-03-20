@@ -15,7 +15,7 @@ on:
 
 env:
   # github.repository as <account>/<repo>
-  IMAGE_NAME: garikdjan/pi-stack
+  IMAGE_NAME: ${{ vars.DOCKERHUB_USERNAME }}/pi-stack
 
 jobs:
   build:
